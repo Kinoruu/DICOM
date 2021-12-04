@@ -4,7 +4,7 @@ import numpy as np
 import re
 import math
 
-dataset = pydicom.dcmread("IM_0093.dcm")
+dataset = pydicom.dcmread("IM_0218.dcm")
 # Proszę przygotować program, który wczyta podany mu w linii poleceń plik DICOM, Wypisze
 # podstawowe informacje o pliku w konsoli: imię i nazwisko pacjenta, wiek, waga, rodzaj badania
 # (0x0008,0x0060) oraz inne informacje, jeśli występują – data wykonania sesji badania, czy jest w
@@ -62,7 +62,7 @@ def klikniecie(event, x, y, flags, param):
         # c = math.sqrt(pow(abs(wspolrzedne_nacisn.index(0) - wspolrzedne_puszczone.index(0)), 2) +
                       # pow(abs(wspolrzedne_nacisn.index(1) - wspolrzedne_puszczone.index(1)), 2))
         c = math.sqrt(pow(abs(xn - xp) * psx, 2) + pow(abs(yn - yp) * psy, 2))
-        print(str(round(c, 2)) + 'mm')
+        print('Rzeczywista odległość: ' + str(round(c, 2)) + 'mm')
 
 
 obraz = dataset.pixel_array
